@@ -20,12 +20,13 @@ module.exports = {
 				loader: 'babel-loader', // 사용할 loader 이름
 				options: {
 					//사용할 loader 옵션 설정
+					//presets = 여러 플러그인들의 집합
 					presets: [
 						[
 							'@babel/preset-env',
 							{
 								targets: {
-									browsers: ['> 1% in KR'],
+									browsers: ['> 1% in KR'], // 지원 브라우저 설정 가능
 								},
 								debug: true,
 							},
@@ -38,6 +39,7 @@ module.exports = {
 	},
 	// 번들된 파일을 출력
 	output: {
+		publicPath: '/dist/',
 		path: path.join(__dirname, 'dist'), // '현재 경로/dist' 디렉토리의 output path 설정
 		filename: 'app.js', // 출력할 파일 이름 설정
 	},
